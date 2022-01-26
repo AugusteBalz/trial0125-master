@@ -135,7 +135,7 @@ class _EmotionSelectionScreenState extends State<EmotionSelectionScreen> {
                   else {
 
                     //if a person presses "Next", he goes to the next screen to rate the strength of his/her emotions
-                    Navigator.pushNamed(context, "/logmood2");
+                    Navigator.pushNamed(context, "/logmood3");
 
                     //delete all previous
                     moodSelection.clear();

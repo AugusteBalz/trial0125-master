@@ -9,16 +9,30 @@ import 'package:trial0106/models/mood_select.dart';
 import 'package:trial0106/models/moods.dart';
 import 'package:trial0106/models/one_mood.dart';
 import 'package:trial0106/globals/constants_of_mood.dart';
+import 'package:trial0106/models/primary_emotions_blueprint.dart';
 
 int previousIndex = 0; //for theme toggling
 
 ThemeModel currentModel = ThemeModel();
 
+
+//---
+
+
+
 //----
 //for bottom navigation bar
 int selectedIndex = 0;
 
-
+List<MoodSelect> WholeMoodSelectionList = [
+  joySelection,
+  angrySelection,
+  sadSelection,
+  surpriseSelection,
+  loveSelection,
+  fearSelection,
+  otherSelection,
+];
 
 MoodSelect joySelection = MoodSelect(moodP: "Joy", color: joyMoodColor, moodS: [
   "proud",
@@ -26,63 +40,65 @@ MoodSelect joySelection = MoodSelect(moodP: "Joy", color: joyMoodColor, moodS: [
   "peaceful",
   "pleased",
 ]);
-MoodSelect angrySelection = MoodSelect(moodP: "Angry", color: angryMoodColor, moodS: [
-  "jealous",
-  "hurt",
-  "furious",
-  "mad",
-  "triggered",
-],);
-MoodSelect sadSelection = MoodSelect(moodP: "Sad", color: sadMoodColor, moodS: [
-
-  "lonely",
-  "disappointed",
-  "miserable",
-  "guilty",
-  "depressed",
-
-],);
-MoodSelect surpriseSelection = MoodSelect(moodP: "Surprise", color: surpriseMoodColor, moodS: [
-
-  "amazed",
-  "confused",
-  "stunned",
-  "shocked",
-
-],);
-MoodSelect loveSelection = MoodSelect(moodP: "Love", color: loveMoodColor, moodS: [
-
-"romantic",
-"sentimental",
-"appreciative",
-
-  ],);
-MoodSelect fearSelection = MoodSelect(moodP: "Fear", color: fearMoodColor, moodS: [
-
-  "scared",
-  "insecure",
-  "helpless",
-  "anxious",
-],);
-MoodSelect otherSelection = MoodSelect(moodP: "Other", color: otherMoodColor, moodS: [
-
-  "empty",
-  "shameful",
-],);
-
-
-/*
-
-
-BlueprintMoodSelection selectOther = BlueprintMoodSelection(
-  primaryMood: "Other",
-  color: otherMoodColor,
-  secondaryMoods:
+MoodSelect angrySelection = MoodSelect(
+  moodP: "Angry",
+  color: angryMoodColor,
+  moodS: [
+    "jealous",
+    "hurt",
+    "furious",
+    "mad",
+    "triggered",
+  ],
 );
-
-
- */
-
+MoodSelect sadSelection = MoodSelect(
+  moodP: "Sad",
+  color: sadMoodColor,
+  moodS: [
+    "lonely",
+    "disappointed",
+    "miserable",
+    "guilty",
+    "depressed",
+  ],
+);
+MoodSelect surpriseSelection = MoodSelect(
+  moodP: "Surprise",
+  color: surpriseMoodColor,
+  moodS: [
+    "amazed",
+    "confused",
+    "stunned",
+    "shocked",
+  ],
+);
+MoodSelect loveSelection = MoodSelect(
+  moodP: "Love",
+  color: loveMoodColor,
+  moodS: [
+    "romantic",
+    "sentimental",
+    "appreciative",
+  ],
+);
+MoodSelect fearSelection = MoodSelect(
+  moodP: "Fear",
+  color: fearMoodColor,
+  moodS: [
+    "scared",
+    "insecure",
+    "helpless",
+    "anxious",
+  ],
+);
+MoodSelect otherSelection = MoodSelect(
+  moodP: "Other",
+  color: otherMoodColor,
+  moodS: [
+    "empty",
+    "shameful",
+  ],
+);
 
 // Define the default `TextTheme`. Use this to specify the default
 // text styling for headlines, titles, bodies of text, and more.
@@ -276,4 +292,4 @@ OneMood oneSubEmotion = OneMood(
     color: Colors.grey);
 
 MoodEntry oneEntry =
-MoodEntry(id: "a1", dateTime: DateTime.now(), eachMood: []);
+    MoodEntry(id: "a1", dateTime: DateTime.now(), eachMood: []);

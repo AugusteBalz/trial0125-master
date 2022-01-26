@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:trial0106/globals/colors_of_mood.dart';
+import 'package:trial0106/models/moods.dart';
+import 'package:trial0106/models/primary_emotions_blueprint.dart';
+import 'package:trial0106/widgets/widget_for_primary_emotion_display.dart';
+
+
+//TODO: add a colour wheel to select emotions
+
+class LogMoodScreen1 extends StatefulWidget {
+  const LogMoodScreen1({Key? key}) : super(key: key);
+
+  @override
+  State<LogMoodScreen1> createState() => _LogMoodScreen1State();
+}
+
+class _LogMoodScreen1State extends State<LogMoodScreen1> {
+  PrimaryEmotionsBlueprint selectionOfPrimaryEmotion = PrimaryEmotionsBlueprint(
+      emotionName: "Love", emotionP: PrimaryMoods.Love, color: loveMoodColor);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Which emotion is the strongest?",
+            style: Theme.of(context).textTheme.headline2),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        //TODO: show
+        //systemOverlayStyle: SystemUiOverlayStyle.light,
+      ),
+      body: Container(
+        margin: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: wholePrimaryEmotionsList.map((oneEmotionName) {
+            selectionOfPrimaryEmotion = oneEmotionName;
+
+            // currentSliderValue = sliders.elementAt(0);
+
+            //displaying widgets
+
+            return WidgetForPrimaryEmotionDisplay(
+                selectionOfPrimaryEmotion: selectionOfPrimaryEmotion);
+          }).toList(),
+        ),
+      ),
+    );
+  }
+}

@@ -15,14 +15,14 @@ import 'package:trial0106/widgets/mood/new_mood.dart';
 
 //TODO: do a "PageView" for scrolling through different types of emotions
 
-class LogMoodScreenOne extends StatefulWidget {
-  const LogMoodScreenOne({Key? key}) : super(key: key);
+class LogMoodScreen2 extends StatefulWidget {
+  const LogMoodScreen2({Key? key}) : super(key: key);
 
   @override
-  State<LogMoodScreenOne> createState() => _LogMoodScreenOneState();
+  State<LogMoodScreen2> createState() => _LogMoodScreen2State();
 }
 
-class _LogMoodScreenOneState extends State<LogMoodScreenOne> {
+class _LogMoodScreen2State extends State<LogMoodScreen2> {
   
 
   @override

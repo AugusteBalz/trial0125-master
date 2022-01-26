@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:trial0106/globals/globals.dart';
 
-import 'package:trial0106/widgets/app_settings.dart';
+import 'package:trial0106/screens/app_settings.dart';
 import 'package:trial0106/widgets/bottom_nav.dart';
-import 'package:trial0106/widgets/history.dart';
-import 'package:trial0106/widgets/main_screen.dart';
+import 'package:trial0106/screens/history.dart';
+import 'package:trial0106/screens/main_screen.dart';
 
-import 'package:trial0106/widgets/mood/log_mood_screen_one.dart';
-import 'package:trial0106/widgets/mood/log_mood_screen_two.dart';
+import 'package:trial0106/widgets/mood/log_mood_screen_1.dart';
+import 'package:trial0106/widgets/mood/log_mood_screen_2.dart';
+import 'package:trial0106/widgets/mood/log_mood_screen_3.dart';
 
 import 'package:provider/provider.dart';
 
@@ -36,9 +37,14 @@ class MyAppFirst extends StatelessWidget {
 
               //to multiselect mood log
 
-              '/logmood1': (context) => const LogMoodScreenOne(),
+              '/logmood1': (context) => const LogMoodScreen1(),
 
-              '/logmood2': (context) => const LogMoodScreenTwo(),
+              '/logmood2': (context) => const LogMoodScreen2(),
+
+              '/logmood3': (context) => const LogMoodScreen3(),
+
+              //
+              '/history' : (context) => const ShowHistory(),
 
               //'/emotionSelectionScreen' : (context) => const EmotionSelectionScreen(),
             },

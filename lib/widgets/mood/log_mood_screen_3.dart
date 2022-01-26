@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:trial0106/globals/globals.dart';
+import 'package:trial0106/main.dart';
 import 'package:trial0106/widgets/bottom_nav.dart';
+import 'package:trial0106/screens/history.dart';
 
 import 'package:trial0106/widgets/mood/display_one_slider.dart';
 
-class LogMoodScreenTwo extends StatefulWidget {
-  const LogMoodScreenTwo({Key? key}) : super(key: key);
+class LogMoodScreen3 extends StatefulWidget {
+  const LogMoodScreen3({Key? key}) : super(key: key);
 
   @override
-  State<LogMoodScreenTwo> createState() => _LogMoodScreenTwoState();
+  State<LogMoodScreen3> createState() => _LogMoodScreen3State();
 }
 
-class _LogMoodScreenTwoState extends State<LogMoodScreenTwo> {
+class _LogMoodScreen3State extends State<LogMoodScreen3> {
 
 //  File _storedMoodEntryList;
 
@@ -38,6 +40,7 @@ class _LogMoodScreenTwoState extends State<LogMoodScreenTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         title: Text("How strong are these emotions?",
             style: Theme.of(context).textTheme.headline2),
         actions: <Widget>[
@@ -47,9 +50,23 @@ class _LogMoodScreenTwoState extends State<LogMoodScreenTwo> {
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.pop(context);
+                  Navigator.pop(context);
 
                   _addNewMoodEntryFinal();
-                  
+
+
+                  //TODO: make it work!!!!
+
+                  /*  setState(() {
+                      BottomNavi().changePage(2);
+
+                    });
+
+
+                  HomePage();
+
+                   */
+
 
                 },
                 child: Text(
