@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trial0106/screens/graphs.dart';
 import 'package:trial0106/screens/history.dart';
 
 
@@ -33,6 +34,8 @@ class _ButtonToLogMoodState extends State<ButtonToLogMood> {
 
           setState(() {
             const ShowHistory();
+            const GraphScreen();
+
           });
         },
 

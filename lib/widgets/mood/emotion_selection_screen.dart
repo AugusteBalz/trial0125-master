@@ -4,6 +4,7 @@ import 'package:trial0106/models/blueprint_mood.dart';
 import 'package:trial0106/models/mood_entries.dart';
 import 'package:trial0106/models/moods.dart';
 import 'package:trial0106/models/one_mood.dart';
+import 'package:trial0106/screens/graphs.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:trial0106/models/widget_for_mood_display.dart';
@@ -93,7 +94,7 @@ class _EmotionSelectionScreenState extends State<EmotionSelectionScreen> {
           Padding(
               padding: const EdgeInsets.only(right: 20.0, top: 15),
               child: GestureDetector(
-                onTap: () {
+                onTap: () async {
                   _addNewMoodEntry();
 
                   if (oneEntry.eachMood.isEmpty) {
@@ -104,10 +105,13 @@ class _EmotionSelectionScreenState extends State<EmotionSelectionScreen> {
                       builder: (BuildContext context) =>
                           _buildPopupDialog(context),
                     );
-                  } else {
+                  } else  {
                     //if a person presses "Next", he goes to the next screen to rate the strength of his/her emotions
-                    Navigator.pushNamed(context, "/logmood3");
+                   await Navigator.pushNamed(context, "/logmood3");
 
+
+                   //TODO: I want this part to re-load when new emotion is added
+                   GraphScreen();
                     //delete all previous
                     moodSelection.clear();
                   }

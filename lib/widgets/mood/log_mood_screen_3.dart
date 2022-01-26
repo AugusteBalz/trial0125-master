@@ -52,6 +52,7 @@ class _LogMoodScreen3State extends State<LogMoodScreen3> {
                   _addNewMoodEntryFinal();
 
 
+
                   //TODO: make it work!!!! details: after logging a mood person should be forwarded to "history" tab
 
                   /*  setState(() {

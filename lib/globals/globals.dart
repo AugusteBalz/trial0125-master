@@ -235,15 +235,6 @@ Map<String, BlueprintMood> nameToBlueprint = {
   "shameful": wholeList.SHAMEFUL,
 };
 
-Map<PrimaryMoods, Color> primaryColors = {
-  PrimaryMoods.Joy: joyMoodColor,
-  PrimaryMoods.Angry: angryMoodColor,
-  PrimaryMoods.Fearful: fearMoodColor,
-  PrimaryMoods.Love: loveMoodColor,
-  PrimaryMoods.Sad: sadMoodColor,
-  PrimaryMoods.Surprise: surpriseMoodColor,
-  PrimaryMoods.Other: otherMoodColor,
-};
 
 final List<MoodEntry> moodEntryList2 = [];
 
@@ -309,6 +300,59 @@ final List<MoodEntry> moodEntryList = [
         strength: 2,
         color: sadMoodColor,
       ),
+    ],
+  ),
+
+  MoodEntry(
+    id: 'e4',
+    dateTime: DateTime.utc(2022, 1, 23, 15, 3),
+    eachMood: [
+
+      OneMood(
+        moodPrimary: PrimaryMoods.Love,
+        moodSecondary: SecondaryMoods.love_Appreciative,
+        strength: 9,
+        color: loveMoodColor,
+      ),
+      OneMood(
+        moodPrimary: PrimaryMoods.Surprise,
+        moodSecondary: SecondaryMoods.surprise_Amazed,
+        strength: 8,
+        color: surpriseMoodColor,
+      ),
+      OneMood(
+        moodPrimary: PrimaryMoods.Joy,
+        moodSecondary: SecondaryMoods.joy_Happy,
+        strength: 6,
+        color: joyMoodColor,
+      ),
+
+    ],
+  ),
+  MoodEntry(
+    id: 'e5',
+    dateTime: DateTime.utc(2022, 1, 22, 12, 33),
+    eachMood: [
+
+      OneMood(
+        moodPrimary: PrimaryMoods.Love,
+        moodSecondary: SecondaryMoods.love_Appreciative,
+        strength: 9,
+        color: loveMoodColor,
+      ),
+      OneMood(
+        moodPrimary: PrimaryMoods.Fearful,
+        moodSecondary: SecondaryMoods.fear_Scared,
+        strength: 8,
+        color: fearMoodColor,
+      ),
+      OneMood(
+        moodPrimary: PrimaryMoods.Joy,
+        moodSecondary: SecondaryMoods.joy_Happy,
+        strength: 6,
+        color: joyMoodColor,
+      ),
+
     ],
   ),
 ];
