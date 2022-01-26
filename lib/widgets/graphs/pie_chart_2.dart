@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trial0106/globals/globals.dart';
 import 'package:trial0106/globals/matching_maps.dart';
+import 'package:trial0106/main.dart';
 import 'package:trial0106/models/mood_entries.dart';
 import 'package:trial0106/models/moods.dart';
 import 'package:trial0106/models/one_mood.dart';
@@ -16,6 +17,7 @@ int wholeMonthsCount = 0;
 
 PrimaryMoods mostPopularMood = PrimaryMoods.Other;
 String moodOfTheMonth3 = '';
+Color colorOfTheMonth = Colors.cyanAccent;
 
 class PieChartSample3 extends StatefulWidget {
   const PieChartSample3({Key? key}) : super(key: key);
@@ -27,12 +29,8 @@ class PieChartSample3 extends StatefulWidget {
 class PieChartSample3State extends State {
   int touchedIndex = 0;
 
-
   @override
   Widget build(BuildContext context) {
-
-
-
     return Column(
       children: [
         Card(
@@ -65,14 +63,25 @@ class PieChartSample3State extends State {
           ),
         ),
         Container(
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-          child: Text(moodOfTheMonth3,
-
-
-
-
-          ),
-        ),
+            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+            child: RichText(
+              text: TextSpan(
+                // Note: Styles for TextSpans must be explicitly defined.
+                // Child text spans will inherit styles from parent
+                style: const TextStyle(
+                  color: Colors.black,
+                ),
+                children: <TextSpan>[
+                  TextSpan(text: 'The most common emotion of this month is '),
+                  TextSpan(
+                      text: moodOfTheMonth3,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: colorOfTheMonth,
+                      )),
+                ],
+              ),
+            )),
       ],
     );
   }
@@ -88,7 +97,6 @@ class PieChartSample3State extends State {
       final widgetSize = isTouched ? 45.0 : 30.0;
       final textSize = isTouched ? 14.0 : 10.0;
 
-
       double value = countingPrimaryOccurences.values.elementAt(i);
 
       //show right percentage
@@ -99,14 +107,15 @@ class PieChartSample3State extends State {
 
       Color coloredBy2 = (coloredBy != null) ? coloredBy : Colors.grey;
 
-      Color coloredBy3 = Color.alphaBlend(Colors.black26.withOpacity(0.15), coloredBy2);
-
+      Color coloredBy3 =
+          Color.alphaBlend(Colors.black26.withOpacity(0.15), coloredBy2);
 
       //get the correct title
 
-      String? title = primaryMoodToString[countingPrimaryOccurences.keys.elementAt(i)];
+      String? title =
+          primaryMoodToString[countingPrimaryOccurences.keys.elementAt(i)];
 
-      String title2 = (title!= null) ? title : "Error";
+      String title2 = (title != null) ? title : "Error";
 
       return PieChartSectionData(
         color: coloredBy3,
@@ -114,13 +123,13 @@ class PieChartSample3State extends State {
         title: name + '%',
         radius: radius,
         titleStyle: TextStyle(
-            fontSize: fontSize-1,
+            fontSize: fontSize - 1,
             fontWeight: FontWeight.bold,
             color: const Color(0xffffffff)),
         badgeWidget: _Badge(
           title2,
           size: widgetSize,
-          textsize : textSize,
+          textsize: textSize,
           borderColor: coloredBy2,
         ),
         badgePositionPercentageOffset: .98,
@@ -139,7 +148,7 @@ class _Badge extends StatelessWidget {
     this.svgAsset, {
     Key? key,
     required this.size,
-        required this.textsize,
+    required this.textsize,
     required this.borderColor,
   }) : super(key: key);
 
@@ -147,13 +156,13 @@ class _Badge extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: PieChart.defaultDuration,
-      width: size*2,
+      width: size * 2,
       height: size,
       decoration: BoxDecoration(
         color: Colors.white,
 
         //TODO: HERE!!!
-       // shape: BoxShape.circle,
+        // shape: BoxShape.circle,
         border: Border.all(
           color: borderColor,
           width: 2,
@@ -172,10 +181,9 @@ class _Badge extends StatelessWidget {
         child: Text(
           svgAsset,
           style: Theme.of(context).textTheme.bodyText1!.copyWith(
-            fontWeight: FontWeight.bold,
-            fontSize: textsize,
-
-          ),
+                fontWeight: FontWeight.bold,
+                fontSize: textsize,
+              ),
           //fit: BoxFit.contain,
         ),
       ),
@@ -229,29 +237,27 @@ void calculateMonthlyStats() {
   }
 }
 
-void findMostCommonEmotion(){
-
+void findMostCommonEmotion() {
   double maxi = 0;
 
-  for(PrimaryMoods mood in countingPrimaryOccurences.keys){
+  for (PrimaryMoods mood in countingPrimaryOccurences.keys) {
     double? temp = countingPrimaryOccurences[mood];
 
-    if (temp != null && temp > maxi){
+    if (temp != null && temp > maxi) {
       maxi = temp;
       mostPopularMood = mood;
     }
-
   }
 
   displayMostPopularMood();
-
 }
 
-void displayMostPopularMood(){
-
+void displayMostPopularMood() {
+  // TODO: how to change color and type for one word?
   String? moodOfTheMonth = primaryMoodToString[mostPopularMood];
-  String moodOfTheMonth2 = (moodOfTheMonth!= null ) ? moodOfTheMonth : "Error";
-  moodOfTheMonth3 = "The most common emotion of this month is " + moodOfTheMonth2;
+  String moodOfTheMonth2 = (moodOfTheMonth != null) ? moodOfTheMonth : "Error";
+  moodOfTheMonth3 = moodOfTheMonth2;
 
-
+  Color? colorz = primaryColors[mostPopularMood];
+  colorOfTheMonth = (colorz != null) ? colorz : Colors.teal;
 }
