@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trial0106/globals/globals.dart';
+import 'package:trial0106/helpers/db_helper.dart';
 import 'package:trial0106/widgets/mood/display_one_slider.dart';
 
 class LogMoodScreen3 extends StatefulWidget {
@@ -14,10 +15,18 @@ class _LogMoodScreen3State extends State<LogMoodScreen3> {
 //  File _storedMoodEntryList;
 
 
-  void _addNewMoodEntryFinal() {
+  void _addNewMoodEntryFinal() async {
+
+    //TODO: does not work adding items to database
+  //  await DBHelper.insert('user_mood_database2.db', oneEntry.toListOfMaps());
+
     setState(() {
       //puts it reversed
       moodEntryList.insert(0, oneEntry);
+
+
+
+
     });
   }
 

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:trial0106/globals/globals.dart';
 
 import 'package:trial0106/screens/app_settings.dart';
+import 'package:trial0106/screens/graphs.dart';
 import 'package:trial0106/widgets/bottom_nav.dart';
 import 'package:trial0106/screens/history.dart';
 import 'package:trial0106/screens/main_screen.dart';
@@ -126,10 +127,7 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
     ShowHistory(),
-    Text(
-      'Index 2: Business',
-      style: optionStyle,
-    ),
+    GraphScreen(),
     AppSettings(),
   ];
 

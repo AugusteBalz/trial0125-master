@@ -3,6 +3,8 @@ import 'package:trial0106/globals/globals.dart';
 
 import 'package:intl/intl.dart';
 
+//TODO: add the ability to delete an entry
+
 class MoodLogList extends StatelessWidget {
   const MoodLogList({Key? key}) : super(key: key);
 

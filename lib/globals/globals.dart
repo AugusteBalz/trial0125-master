@@ -245,42 +245,69 @@ Map<PrimaryMoods, Color> primaryColors = {
   PrimaryMoods.Other: otherMoodColor,
 };
 
-final List<MoodEntry> moodEntryList = [];
+final List<MoodEntry> moodEntryList2 = [];
 
-final List<MoodEntry> moodEntryList2 = [
+final List<MoodEntry> moodEntryList = [
   MoodEntry(
     id: 'e1',
     dateTime: DateTime.now(),
     eachMood: [
       OneMood(
-        moodPrimary: PrimaryMoods.Angry,
-        moodSecondary: SecondaryMoods.angry_Hurt,
-        strength: 6,
-        color: Colors.redAccent,
+        moodPrimary: PrimaryMoods.Joy,
+        moodSecondary: SecondaryMoods.joy_Cheerful,
+        strength: 7,
+        color: joyMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Angry,
-        moodSecondary: SecondaryMoods.angry_Hurt,
-        strength: 4,
-        color: Colors.yellow,
+        moodPrimary: PrimaryMoods.Joy,
+        moodSecondary: SecondaryMoods.joy_Peaceful,
+        strength: 10,
+        color: joyMoodColor,
       ),
     ],
   ),
   MoodEntry(
     id: 'e2',
-    dateTime: DateTime.now(),
+    dateTime: DateTime.utc(2022, 1, 25, 16, 3),
+    eachMood: [
+      
+      OneMood(
+        moodPrimary: PrimaryMoods.Love,
+        moodSecondary: SecondaryMoods.love_Appreciative,
+        strength: 9,
+        color: loveMoodColor,
+      ),
+      OneMood(
+        moodPrimary: PrimaryMoods.Surprise,
+        moodSecondary: SecondaryMoods.surprise_Amazed,
+        strength: 8,
+        color: surpriseMoodColor,
+      ),
+      OneMood(
+        moodPrimary: PrimaryMoods.Joy,
+        moodSecondary: SecondaryMoods.joy_Happy,
+        strength: 6,
+        color: joyMoodColor,
+      ),
+
+    ],
+  ),
+
+  MoodEntry(
+    id: 'e3',
+    dateTime: DateTime.utc(2022, 1, 24, 14, 44),
     eachMood: [
       OneMood(
         moodPrimary: PrimaryMoods.Angry,
         moodSecondary: SecondaryMoods.angry_Hurt,
-        strength: 6,
-        color: Colors.redAccent,
+        strength: 3,
+        color: angryMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Angry,
-        moodSecondary: SecondaryMoods.angry_Hurt,
-        strength: 4,
-        color: Colors.yellow,
+        moodPrimary: PrimaryMoods.Sad,
+        moodSecondary: SecondaryMoods.sad_Lonely,
+        strength: 2,
+        color: sadMoodColor,
       ),
     ],
   ),
