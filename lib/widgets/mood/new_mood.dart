@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'display_multi_selection.dart';
 
 class NewMood extends StatelessWidget {
   final Function addMood;
@@ -12,13 +11,13 @@ class NewMood extends StatelessWidget {
     return Card(
       elevation: 5,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
 
             TextButton(
-              child: Text("Log Mood // Done"),
+              child: const Text("Log Mood // Done"),
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(16.0),
                 primary: Colors.deepPurple,

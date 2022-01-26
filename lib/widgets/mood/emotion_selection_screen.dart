@@ -5,7 +5,6 @@ import 'package:trial0106/models/mood_entries.dart';
 import 'package:trial0106/models/moods.dart';
 import 'package:trial0106/models/one_mood.dart';
 
-import 'dart:math';
 
 import 'package:trial0106/models/widget_for_mood_display.dart';
 

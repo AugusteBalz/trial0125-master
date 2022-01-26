@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/cupertino.dart';
-import 'package:trial0106/globals/colors_of_mood.dart';
 
 class MoodSelect{
 

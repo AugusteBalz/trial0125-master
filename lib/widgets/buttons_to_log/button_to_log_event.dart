@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:trial0106/screens/history.dart';
 
 class ButtonToLogEvent extends StatefulWidget {
   const ButtonToLogEvent({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class _ButtonToLogEventState extends State<ButtonToLogEvent> {
         //borderRadius: BorderRadius.all(Radius.circular(20.0)),
         color: Colors.redAccent,
       ),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: InkWell(
         onTap: () async {
           /*

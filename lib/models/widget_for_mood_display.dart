@@ -44,7 +44,7 @@ class WidgetForMoodDisplay extends StatelessWidget {
             //name of the emotion
 
             Container(
-                margin: EdgeInsets.only(top: 200),
+                margin: const EdgeInsets.only(top: 200),
                 child: Center(child: Text(newMood.moodP))),
 
 
@@ -53,7 +53,7 @@ class WidgetForMoodDisplay extends StatelessWidget {
             SingleChildScrollView(
               child: Container(
 
-                margin: EdgeInsets.symmetric(vertical: 150, horizontal: 50),
+                margin: const EdgeInsets.symmetric(vertical: 150, horizontal: 50),
                 child: DisplayMultiSelection(items: newMood, selectedChoices: moodSelection,),
               ),
             ),

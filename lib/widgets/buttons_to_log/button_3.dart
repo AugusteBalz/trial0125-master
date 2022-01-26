@@ -28,7 +28,7 @@ class _Button3State extends State<Button3> {
         //borderRadius: BorderRadius.all(Radius.circular(20.0)),
         color: Colors.redAccent,
       ),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: InkWell(
         onTap: () async {
         /*  final value =

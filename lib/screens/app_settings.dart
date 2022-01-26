@@ -58,7 +58,6 @@ class _AppSettingsState extends State<AppSettings> {
                   //animate: true, // with just animate set to true, default curve = Curves.easeIn
                   //curve: Curves.linear, // animate must be set to true when using custom curve
                   onToggle: (index) {
-                    print('switched to: $index');
 
                     //TODO: fix theming
 

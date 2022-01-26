@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'package:trial0106/globals/globals.dart';
-import 'package:trial0106/main.dart';
-import 'package:trial0106/widgets/bottom_nav.dart';
-import 'package:trial0106/screens/history.dart';
-
 import 'package:trial0106/widgets/mood/display_one_slider.dart';
 
 class LogMoodScreen3 extends StatefulWidget {
@@ -26,13 +21,6 @@ class _LogMoodScreen3State extends State<LogMoodScreen3> {
     });
   }
 
-  void _cleanMoodEntryList(){
-
-    setState(() {
-      //TODO: which should be cleaned?
-      moodEntryList.clear();
-    });
-  }
 
   // double currentSliderValue = 1;
 
@@ -55,7 +43,7 @@ class _LogMoodScreen3State extends State<LogMoodScreen3> {
                   _addNewMoodEntryFinal();
 
 
-                  //TODO: make it work!!!!
+                  //TODO: make it work!!!! details: after logging a mood person should be forwarded to "history" tab
 
                   /*  setState(() {
                       BottomNavi().changePage(2);

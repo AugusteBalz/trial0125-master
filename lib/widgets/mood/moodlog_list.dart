@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:trial0106/globals/globals.dart';
-import 'package:trial0106/models/mood_entries.dart';
+
 import 'package:intl/intl.dart';
 
 class MoodLogList extends StatelessWidget {
+  const MoodLogList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,8 +51,8 @@ class MoodLogList extends StatelessWidget {
 
                           children: entry.eachMood.map((md) {
                             //previous output:
-                            // "SecondaryMood.angry_jelous"
-                            //this leaves it just with "jelous"
+                            // "SecondaryMood.angry_jealous"
+                            //this leaves it just with "jealous"
 
                             String temp = md.moodSecondary.toString();
                             String newMoodS = temp.substring(
@@ -64,7 +66,7 @@ class MoodLogList extends StatelessWidget {
 
 
                             int subStrenght = md.strength;
-                            // String somtheing = "${md.strength}"; // string interpolation?
+                            // String something = "${md.strength}"; // string interpolation?
 
                             //color
 
@@ -73,70 +75,59 @@ class MoodLogList extends StatelessWidget {
                             //displaying widgets
 
                             return Container(
-                                child: Container(
                               margin: const EdgeInsets.symmetric(
-                                vertical: 10,
-                                horizontal: 15,
+                            vertical: 10,
+                            horizontal: 15,
                               ),
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 1, horizontal: 10),
+                              padding: const EdgeInsets.symmetric(
+                              vertical: 1, horizontal: 10),
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(5),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        //primary mood
-                                        Container(
-                                          child: Text(newMoodP,
-                                              style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                color: myColor,
-                                              ),),
-                                        ),
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(5),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    //primary mood
+                                    Text(newMoodP,
+                                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: myColor,
+                                        ),),
 
-                                        //the date
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 8, horizontal: 5),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        //secondary mood
-                                        Container(
-                                          child: Text(
-                                            newMoodS,
-                                            style: Theme.of(context).textTheme.bodyText2,
-                                          ),
-                                        ),
-
-                                        //its strenght
-                                        Container(
-                                          child: Text(
-                                            subStrenght.toString(),
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 25,
-                                                color: myColor),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                    //the date
+                                  ],
+                                ),
                               ),
-                            )
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 8, horizontal: 5),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    //secondary mood
+                                    Text(
+                                      newMoodS,
+                                      style: Theme.of(context).textTheme.bodyText2,
+                                    ),
 
-                                //Text(newMood),
-
-                                );
+                                    //its strenght
+                                    Text(
+                                      subStrenght.toString(),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25,
+                                          color: myColor),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                              ),
+                            );
                           }).toList(),
                         ),
                       ],
