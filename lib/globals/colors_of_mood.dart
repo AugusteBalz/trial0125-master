@@ -13,6 +13,6 @@ Color loveMoodColor = const Color(0xFFF5799C);
 Color sadMoodColor = Colors.blue;
 Color joyMoodColor = Colors.green;
 Color surpriseMoodColor = Colors.amber;
-Color otherMoodColor = Colors.blueGrey;
+Color otherMoodColor = Colors.deepPurpleAccent;
 
 

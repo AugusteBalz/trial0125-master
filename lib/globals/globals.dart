@@ -18,7 +18,8 @@ ThemeModel currentModel = ThemeModel();
 
 //---
 
-
+//little number for passing the big emotion
+int indexOfBigEmotion = 0;
 
 //----
 //for bottom navigation bar

@@ -16,12 +16,15 @@ class WidgetForPrimaryEmotionDisplay extends StatefulWidget {
 
 class _WidgetForPrimaryEmotionDisplayState
     extends State<WidgetForPrimaryEmotionDisplay> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: MaterialButton(
           onPressed: () {
+            indexOfBigEmotion  = widget.selectionOfPrimaryEmotion.id;
             Navigator.pushNamed(context, '/logmood2');
+
           },
           color:  widget.selectionOfPrimaryEmotion.color,
           height: 70,

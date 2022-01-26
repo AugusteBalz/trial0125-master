@@ -16,7 +16,7 @@ class LogMoodScreen1 extends StatefulWidget {
 
 class _LogMoodScreen1State extends State<LogMoodScreen1> {
   PrimaryEmotionsBlueprint selectionOfPrimaryEmotion = PrimaryEmotionsBlueprint(
-      emotionName: "Love", emotionP: PrimaryMoods.Love, color: loveMoodColor);
+      emotionName: "Love", emotionP: PrimaryMoods.Love, color: loveMoodColor, id : 0,);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _LogMoodScreen1State extends State<LogMoodScreen1> {
             style: Theme.of(context).textTheme.headline2),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        //TODO: show
+        //TODO: show the back button properly
         //systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: Container(
