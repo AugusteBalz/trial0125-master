@@ -4,6 +4,7 @@ import 'package:trial0106/models/blueprint_mood.dart';
 import 'package:trial0106/models/mood_entries.dart';
 import 'package:trial0106/models/moods.dart';
 import 'package:trial0106/models/one_mood.dart';
+import 'package:uuid/uuid.dart';
 
 import 'package:trial0106/models/widget_for_mood_display.dart';
 
@@ -51,8 +52,8 @@ class _EmotionSelectionScreenState extends State<EmotionSelectionScreen> {
 
     final MoodEntry newEntry =
 
-        //TODO: fix that ids would be calculated dynamically
-        MoodEntry(id: "k1", dateTime: DateTime.now(), eachMood: []);
+        // ids calculated dynamically
+        MoodEntry(id: new Uuid().v1(), dateTime: DateTime.now(), eachMood: []);
 
     oneEntry = newEntry;
 

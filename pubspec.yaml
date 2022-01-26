@@ -59,6 +59,9 @@ dependencies:
   path_provider: ^2.0.8
   path: ^1.8.0
 
+  #for generating ids
+  uuid: ^3.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
