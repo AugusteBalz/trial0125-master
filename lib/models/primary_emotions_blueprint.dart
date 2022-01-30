@@ -17,46 +17,55 @@ class PrimaryEmotionsBlueprint {
 }
 
 List<PrimaryEmotionsBlueprint> wholePrimaryEmotionsList = [
-  PrimaryEmotionsBlueprint(
-    emotionName: "Love",
-    emotionP: PrimaryMoods.Love,
-    color: loveMoodColor,
-    id: 0,
-  ),
+
   PrimaryEmotionsBlueprint(
     emotionName: "Angry",
     emotionP: PrimaryMoods.Angry,
     color: angryMoodColor,
+    id: 0,
+  ),
+  PrimaryEmotionsBlueprint(
+    emotionName: "Scared",
+    emotionP: PrimaryMoods.Scared,
+    color: scaredMoodColor,
     id: 1,
   ),
   PrimaryEmotionsBlueprint(
-    emotionName: "Fear",
-    emotionP: PrimaryMoods.Fearful,
-    color: fearMoodColor,
+    emotionName: "Surprised",
+    emotionP: PrimaryMoods.Surprised,
+    color: surprisedMoodColor,
     id: 2,
   ),
+
   PrimaryEmotionsBlueprint(
-    emotionName: "Surprise",
-    emotionP: PrimaryMoods.Surprise,
-    color: surpriseMoodColor,
+    emotionName: "Powerful",
+    emotionP: PrimaryMoods.Powerful,
+    color: powerfulMoodColor,
     id: 3,
   ),
   PrimaryEmotionsBlueprint(
-    emotionName: "Joy",
-    emotionP: PrimaryMoods.Joy,
-    color: joyMoodColor,
+    emotionName: "Happy",
+    emotionP: PrimaryMoods.Happy,
+    color: happyMoodColor,
     id: 4,
+  ),
+  PrimaryEmotionsBlueprint(
+    emotionName: "Peaceful",
+    emotionP: PrimaryMoods.Peaceful,
+    color: peacefulMoodColor,
+    id: 5,
   ),
   PrimaryEmotionsBlueprint(
     emotionName: "Sad",
     emotionP: PrimaryMoods.Sad,
     color: sadMoodColor,
-    id: 5,
-  ),
-  PrimaryEmotionsBlueprint(
-    emotionName: "Other",
-    emotionP: PrimaryMoods.Other,
-    color: otherMoodColor,
     id: 6,
   ),
+  PrimaryEmotionsBlueprint(
+    emotionName: "Disgusted",
+    emotionP: PrimaryMoods.Disgusted,
+    color: disgustedMoodColor,
+    id: 7,
+  ),
+
 ];

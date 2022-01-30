@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:trial0106/globals/globals.dart';
+import 'package:trial0106/globals/theming.dart';
 
 import 'package:trial0106/screens/app_settings.dart';
 import 'package:trial0106/screens/graphs.dart';
@@ -122,8 +123,7 @@ class _HomePageState extends State<HomePage> {
   //we save the userinput
 
 
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+//  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     MainScreen(),
     ShowHistory(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:trial0106/globals/globals.dart';
+import 'package:trial0106/globals/theming.dart';
 
 
 

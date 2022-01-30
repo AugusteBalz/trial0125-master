@@ -11,12 +11,6 @@ import 'package:trial0106/models/one_mood.dart';
 import 'package:trial0106/globals/constants_of_mood.dart';
 
 
-int previousIndex = 0; //for theme toggling
-
-ThemeModel currentModel = ThemeModel();
-
-
-//---
 
 //little number for passing the big emotion
 int indexOfBigEmotion = 0;
@@ -26,112 +20,183 @@ int indexOfBigEmotion = 0;
 int selectedIndex = 0;
 
 List<MoodSelect> WholeMoodSelectionList = [
-  joySelection,
+  happySelection,
   angrySelection,
   sadSelection,
   surpriseSelection,
-  loveSelection,
-  fearSelection,
-  otherSelection,
+  scaredSelection,
+  powerfulSelection,
+  peacefulSelection,
+  disgustedSelection,
 ];
 
-MoodSelect joySelection = MoodSelect(moodP: "Joy", color: joyMoodColor, moodS: [
-  "proud",
-  "cheerful",
-  "peaceful",
-  "pleased",
-]);
+MoodSelect happySelection = MoodSelect(
+  moodP: "Happy",
+  color: happyMoodColor,
+  moodS: [
+    "excited",
+    "creative",
+    "playful",
+    "needed",
+    "wanted",
+    "loved",
+    "honored",
+    "respected",
+    "open",
+    "valued",
+    "optimistic",
+    "cheerful",
+    "pleased",
+  ],
+);
+
 MoodSelect angrySelection = MoodSelect(
   moodP: "Angry",
   color: angryMoodColor,
   moodS: [
-    "jealous",
-    "hurt",
-    "furious",
+    "offended",
+    "let down",
+    "betrayed",
+    "violated",
+    "annoyed",
+    "pressured",
+    "aggressive",
     "mad",
+    "frustrated",
+    "threatened",
+    "critical",
+    "defensive",
+    "tense",
+    "jealous",
     "triggered",
   ],
 );
+
 MoodSelect sadSelection = MoodSelect(
   moodP: "Sad",
   color: sadMoodColor,
   moodS: [
-    "lonely",
     "disappointed",
-    "miserable",
-    "guilty",
+    "empty",
+    "grief",
+    "lost",
+    "bored",
+    "small",
+    "broken",
+    "worthless",
+    "fragile",
+    "abandoned",
+    "detached",
+    "rejected",
+    "not enough",
+    "distant",
+    "excluded",
+    "lonely",
+    "hurt",
     "depressed",
   ],
 );
+
 MoodSelect surpriseSelection = MoodSelect(
-  moodP: "Surprise",
-  color: surpriseMoodColor,
+  moodP: "Surprised",
+  color: surprisedMoodColor,
   moodS: [
     "amazed",
     "confused",
     "stunned",
     "shocked",
+    "startled",
+    "speechless",
+    "moved",
+    "amused",
   ],
 );
-MoodSelect loveSelection = MoodSelect(
-  moodP: "Love",
-  color: loveMoodColor,
+
+MoodSelect scaredSelection = MoodSelect(
+  moodP: "Scared",
+  color: scaredMoodColor,
   moodS: [
-    "romantic",
-    "sentimental",
-    "appreciative",
-  ],
-);
-MoodSelect fearSelection = MoodSelect(
-  moodP: "Fear",
-  color: fearMoodColor,
-  moodS: [
-    "scared",
-    "insecure",
-    "helpless",
+    "inadequate",
+    "stressed",
+    "powerless",
+    "intimidated",
+    "suspicious",
+    "terrified",
     "anxious",
+    "excluded",
+    "exposed",
+    "insecure",
+    "out of control",
+    "vulnerable",
   ],
 );
-MoodSelect otherSelection = MoodSelect(
-  moodP: "Other",
-  color: otherMoodColor,
+
+MoodSelect powerfulSelection = MoodSelect(
+  moodP: "Powerful",
+  color: powerfulMoodColor,
   moodS: [
-    "empty",
-    "shameful",
+    "fearless",
+    "bold",
+    "proud",
+    "inspired",
+    "focused",
+    "eager",
+    "sure",
+    "upbeat",
+    "self-assured",
+    "passionate",
+    "motivated",
   ],
 );
 
-// Define the default `TextTheme`. Use this to specify the default
-// text styling for headlines, titles, bodies of text, and more.
-
-TextTheme textTextTheme = const TextTheme(
-  //for appbar
-  headline1: TextStyle(fontSize: 27.0, fontWeight: FontWeight.w200),
-
-  //secondary appbar
-  headline2: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w200),
-
-  //for additional appbar things (as "done", "next")
-  headline3: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w400),
-
-  //for mood choice chips
-  headline4: TextStyle(fontSize: 17.0, fontWeight: FontWeight.w200),
-
-  //for smallest emotions
-  headline6: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w200),
-
-  // for smallest emotions appbar things
-  bodyText1: TextStyle(fontSize: 10.0, fontWeight: FontWeight.w400),
-
-  //for bigger sub-emotions
-  bodyText2: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w200),
-
-  //for the date
-  subtitle1: TextStyle(
-      fontWeight: FontWeight.bold, fontSize: 12, color: Colors.blueGrey),
+MoodSelect peacefulSelection = MoodSelect(
+  moodP: "Peaceful",
+  color: peacefulMoodColor,
+  moodS: [
+    "trusted",
+    "accepted",
+    "warm",
+    "considerate",
+    "appreciated",
+    "safe",
+    "seen",
+    "present",
+    "fulfilled",
+    "grateful",
+    "calm",
+    "loving",
+    "hopeful",
+  ],
 );
+
+MoodSelect disgustedSelection = MoodSelect(
+  moodP: "Disgusted",
+  color: disgustedMoodColor,
+  moodS: [
+    "guilty",
+    "judgemental",
+    "awful",
+    "nauseated",
+    "repelled",
+    "ashamed",
+    "embarrased",
+  ],
+);
+
+
 
 List<String> displayMoods = [
+  ...happySelection.moodS,
+  ...sadSelection.moodS,
+  ...angrySelection.moodS,
+  ...surpriseSelection.moodS,
+  ...scaredSelection.moodS,
+  ...powerfulSelection.moodS,
+  ...peacefulSelection.moodS,
+  ...disgustedSelection.moodS,
+];
+
+List<String> displayMoods2 = [
   "jealous",
   "hurt",
   "furious",
@@ -182,58 +247,10 @@ List<String> displayMoods = [
 
 List<String> selectedDisplayMoods = [];
 
-ConstantsOfMood wholeList = ConstantsOfMood();
 
 List<String> selectedChoicesAll = [];
 List<String> moodSelection = [];
 
-Map<String, BlueprintMood> nameToBlueprint = {
-  //ANGRY
-  "jealous": wholeList.JEALOUS,
-  "hurt": wholeList.HURT,
-  "furious": wholeList.FURIOUS,
-  "mad": wholeList.MAD,
-  "triggered": wholeList.TRIGGERED,
-
-  //FEAR
-
-  "scared": wholeList.SCARED,
-  "insecure": wholeList.INSECURE,
-  "helpless": wholeList.HELPLESS,
-  "anxious": wholeList.ANXIOUS,
-
-  //LOVE
-
-  "romantic": wholeList.ROMANTIC,
-  "sentimental": wholeList.SENTIMENTAL,
-  "appreciative": wholeList.APPRECIATIVE,
-
-  //JOY
-
-  "proud": wholeList.PROUD,
-  "cheerful": wholeList.CHEERFUL,
-  "peaceful": wholeList.PEACEFUL,
-  "pleased": wholeList.PLEASED,
-
-  //SURPRISE
-  "amazed": wholeList.AMAZED,
-  "confused": wholeList.CONFUSED,
-  "stunned": wholeList.STUNNED,
-  "shocked": wholeList.SHOCKED,
-
-  //SAD
-
-  "lonely": wholeList.LONELY,
-  "disappointed": wholeList.DISAPPOINTED,
-  "miserable": wholeList.MISERABLE,
-  "guilty": wholeList.GUILTY,
-  "depressed": wholeList.DEPRESSED,
-
-  //OTHER
-
-  "empty": wholeList.EMPTY,
-  "shameful": wholeList.SHAMEFUL,
-};
 
 
 final List<MoodEntry> moodEntryList2 = [];
@@ -244,16 +261,16 @@ final List<MoodEntry> moodEntryList = [
     dateTime: DateTime.now(),
     eachMood: [
       OneMood(
-        moodPrimary: PrimaryMoods.Joy,
-        moodSecondary: SecondaryMoods.joy_Cheerful,
+        moodPrimary: PrimaryMoods.Happy,
+        moodSecondary: SecondaryMoods.happy_cheerful,
         strength: 7,
-        color: joyMoodColor,
+        color: happyMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Joy,
-        moodSecondary: SecondaryMoods.joy_Peaceful,
+        moodPrimary: PrimaryMoods.Peaceful,
+        moodSecondary: SecondaryMoods.peaceful_calm,
         strength: 10,
-        color: joyMoodColor,
+        color: peacefulMoodColor,
       ),
     ],
   ),
@@ -261,105 +278,97 @@ final List<MoodEntry> moodEntryList = [
     id: 'e2',
     dateTime: DateTime.utc(2022, 1, 25, 16, 3),
     eachMood: [
-      
       OneMood(
-        moodPrimary: PrimaryMoods.Love,
-        moodSecondary: SecondaryMoods.love_Appreciative,
+        moodPrimary: PrimaryMoods.Powerful,
+        moodSecondary: SecondaryMoods.powerful_fearless,
         strength: 9,
-        color: loveMoodColor,
+        color: powerfulMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Surprise,
-        moodSecondary: SecondaryMoods.surprise_Amazed,
+        moodPrimary: PrimaryMoods.Surprised,
+        moodSecondary: SecondaryMoods.surprised_amazed,
         strength: 8,
-        color: surpriseMoodColor,
+        color: surprisedMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Joy,
-        moodSecondary: SecondaryMoods.joy_Happy,
+        moodPrimary: PrimaryMoods.Happy,
+        moodSecondary: SecondaryMoods.happy_open,
         strength: 6,
-        color: joyMoodColor,
+        color: happyMoodColor,
       ),
-
     ],
   ),
-
   MoodEntry(
     id: 'e3',
     dateTime: DateTime.utc(2022, 1, 24, 14, 44),
     eachMood: [
       OneMood(
         moodPrimary: PrimaryMoods.Angry,
-        moodSecondary: SecondaryMoods.angry_Hurt,
+        moodSecondary: SecondaryMoods.angry_annoyed,
         strength: 3,
         color: angryMoodColor,
       ),
       OneMood(
         moodPrimary: PrimaryMoods.Sad,
-        moodSecondary: SecondaryMoods.sad_Lonely,
+        moodSecondary: SecondaryMoods.sad_broken,
         strength: 2,
         color: sadMoodColor,
       ),
     ],
   ),
-
   MoodEntry(
     id: 'e4',
     dateTime: DateTime.utc(2022, 1, 23, 15, 3),
     eachMood: [
-
       OneMood(
-        moodPrimary: PrimaryMoods.Love,
-        moodSecondary: SecondaryMoods.love_Appreciative,
+        moodPrimary: PrimaryMoods.Peaceful,
+        moodSecondary: SecondaryMoods.peaceful_grateful,
         strength: 9,
-        color: loveMoodColor,
+        color: peacefulMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Surprise,
-        moodSecondary: SecondaryMoods.surprise_Amazed,
+        moodPrimary: PrimaryMoods.Surprised,
+        moodSecondary: SecondaryMoods.surprised_moved,
         strength: 8,
-        color: surpriseMoodColor,
+        color: surprisedMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Joy,
-        moodSecondary: SecondaryMoods.joy_Happy,
+        moodPrimary: PrimaryMoods.Happy,
+        moodSecondary: SecondaryMoods.happy_wanted,
         strength: 6,
-        color: joyMoodColor,
+        color: happyMoodColor,
       ),
-
     ],
   ),
   MoodEntry(
     id: 'e5',
     dateTime: DateTime.utc(2022, 1, 22, 12, 33),
     eachMood: [
-
       OneMood(
-        moodPrimary: PrimaryMoods.Love,
-        moodSecondary: SecondaryMoods.love_Appreciative,
+        moodPrimary: PrimaryMoods.Disgusted,
+        moodSecondary: SecondaryMoods.disgusted_embarrased,
         strength: 9,
-        color: loveMoodColor,
+        color: disgustedMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Fearful,
-        moodSecondary: SecondaryMoods.fear_Scared,
+        moodPrimary: PrimaryMoods.Scared,
+        moodSecondary: SecondaryMoods.scared_anxious,
         strength: 8,
-        color: fearMoodColor,
+        color: scaredMoodColor,
       ),
       OneMood(
-        moodPrimary: PrimaryMoods.Joy,
-        moodSecondary: SecondaryMoods.joy_Happy,
+        moodPrimary: PrimaryMoods.Angry,
+        moodSecondary: SecondaryMoods.angry_let_down,
         strength: 6,
-        color: joyMoodColor,
+        color: angryMoodColor,
       ),
-
     ],
   ),
 ];
 
 OneMood oneSubEmotion = OneMood(
-    moodPrimary: PrimaryMoods.Love,
-    moodSecondary: SecondaryMoods.joy_Proud,
+    moodPrimary: PrimaryMoods.Happy,
+    moodSecondary: SecondaryMoods.happy_cheerful,
     strength: 0,
     color: Colors.grey);
 

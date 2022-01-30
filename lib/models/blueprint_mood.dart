@@ -19,6 +19,6 @@ class BlueprintMood {
 
 BlueprintMood defaultBlueprint = BlueprintMood(
     name: "happy",
-    moodPrimary: PrimaryMoods.Joy,
-    moodSecondary: SecondaryMoods.joy_Happy,
+    moodPrimary: PrimaryMoods.Happy,
+    moodSecondary: SecondaryMoods.happy_cheerful,
     color: Colors.yellow);

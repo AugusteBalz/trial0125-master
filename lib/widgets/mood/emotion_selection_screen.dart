@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trial0106/globals/globals.dart';
+import 'package:trial0106/globals/matching_maps.dart';
 import 'package:trial0106/models/blueprint_mood.dart';
 import 'package:trial0106/models/mood_entries.dart';
 import 'package:trial0106/models/moods.dart';
@@ -22,15 +23,22 @@ class _EmotionSelectionScreenState extends State<EmotionSelectionScreen> {
   var currentPageValue = 0.0;
 
   final List<dynamic> displayWidgets = [
-    WidgetForMoodDisplay(newMood: loveSelection),
+
     WidgetForMoodDisplay(newMood: angrySelection),
-    WidgetForMoodDisplay(newMood: fearSelection),
+    WidgetForMoodDisplay(newMood: scaredSelection),
     WidgetForMoodDisplay(newMood: surpriseSelection),
+    WidgetForMoodDisplay(newMood: powerfulSelection),
+
+
     Container(
-      child: WidgetForMoodDisplay(newMood: joySelection),
+      child: WidgetForMoodDisplay(newMood: happySelection),
     ),
+
+    WidgetForMoodDisplay(newMood: peacefulSelection),
+
+
     WidgetForMoodDisplay(newMood: sadSelection),
-    WidgetForMoodDisplay(newMood: otherSelection),
+    WidgetForMoodDisplay(newMood: disgustedSelection),
   ];
 
   double? currentPage = 0;
@@ -73,8 +81,8 @@ class _EmotionSelectionScreenState extends State<EmotionSelectionScreen> {
         } else {
           //add one new mood
           oneEntry.eachMood.add(OneMood(
-              moodPrimary: PrimaryMoods.Joy,
-              moodSecondary: SecondaryMoods.joy_Proud,
+              moodPrimary: PrimaryMoods.Happy,
+              moodSecondary: SecondaryMoods.happy_cheerful,
               strength: 10,
               color: Colors.yellow));
         }

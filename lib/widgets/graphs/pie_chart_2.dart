@@ -15,7 +15,7 @@ Map<PrimaryMoods, double> countingPrimaryOccurences = {};
 
 int wholeMonthsCount = 0;
 
-PrimaryMoods mostPopularMood = PrimaryMoods.Other;
+PrimaryMoods mostPopularMood = PrimaryMoods.Scared;
 String moodOfTheMonth3 = '';
 Color colorOfTheMonth = Colors.cyanAccent;
 
@@ -161,7 +161,7 @@ class _Badge extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
 
-        //TODO: HERE!!!
+        //TODO: do proper sizing of the boxes
         // shape: BoxShape.circle,
         border: Border.all(
           color: borderColor,
@@ -253,7 +253,7 @@ void findMostCommonEmotion() {
 }
 
 void displayMostPopularMood() {
-  // TODO: how to change color and type for one word?
+  // TODO: edit the theming of words
   String? moodOfTheMonth = primaryMoodToString[mostPopularMood];
   String moodOfTheMonth2 = (moodOfTheMonth != null) ? moodOfTheMonth : "Error";
   moodOfTheMonth3 = moodOfTheMonth2;

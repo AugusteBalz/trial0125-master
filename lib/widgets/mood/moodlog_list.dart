@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trial0106/globals/globals.dart';
 
 import 'package:intl/intl.dart';
+import 'package:trial0106/globals/matching_maps.dart';
 
 //TODO: add the ability to delete an entry
 
@@ -56,15 +57,16 @@ class MoodLogList extends StatelessWidget {
                             // "SecondaryMood.angry_jealous"
                             //this leaves it just with "jealous"
 
-                            String temp = md.moodSecondary.toString();
-                            String newMoodS = temp.substring(
-                                (temp.indexOf("_") + 1), temp.length);
+
+                            String? temp = secondaryMoodToString[md.moodSecondary];
+                            String newMoodS = (temp != null) ? temp : "ERROR";
+
+
 
                             //same goes with primary moods
 
-                            String temp2 = md.moodPrimary.toString();
-                            String newMoodP = temp2.substring(
-                                (temp2.indexOf(".") + 1), temp2.length);
+                            String? temp2 = primaryMoodToString[md.moodPrimary];
+                            String newMoodP = (temp2 != null) ? temp2 : "ERROR";
 
 
                             int subStrenght = md.strength;

@@ -16,13 +16,13 @@ class LogMoodScreen1 extends StatefulWidget {
 
 class _LogMoodScreen1State extends State<LogMoodScreen1> {
   PrimaryEmotionsBlueprint selectionOfPrimaryEmotion = PrimaryEmotionsBlueprint(
-      emotionName: "Love", emotionP: PrimaryMoods.Love, color: loveMoodColor, id : 0,);
+      emotionName: "Disgusted", emotionP: PrimaryMoods.Disgusted, color: disgustedMoodColor, id : 0,);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Which emotion is the strongest?",
+        title: Text("Right now I am feeling...",
             style: Theme.of(context).textTheme.headline2),
         backgroundColor: Colors.transparent,
         elevation: 0,

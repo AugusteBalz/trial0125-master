@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trial0106/globals/globals.dart';
+import 'package:trial0106/globals/matching_maps.dart';
 import 'package:trial0106/helpers/db_helper.dart';
 import 'package:trial0106/widgets/mood/display_one_slider.dart';
 
@@ -86,15 +87,20 @@ class _LogMoodScreen3State extends State<LogMoodScreen3> {
                 // "SecondaryMood.angry_jealous"
                 //this leaves it just with "jealous"
 
-                String temp = md.moodSecondary.toString();
-                String newMoodS =
-                    temp.substring((temp.indexOf("_") + 1), temp.length);
+                //previous output:
+                // "SecondaryMood.angry_jealous"
+                //this leaves it just with "jealous"
+
+
+                String? temp = secondaryMoodToString[md.moodSecondary];
+                String newMoodS = (temp != null) ? temp : "ERROR";
+
+
 
                 //same goes with primary moods
 
-                String temp2 = md.moodPrimary.toString();
-                String newMoodP =
-                    temp2.substring((temp2.indexOf(".") + 1), temp2.length);
+                String? temp2 = primaryMoodToString[md.moodPrimary];
+                String newMoodP = (temp2 != null) ? temp2 : "ERROR";
 
                 //color
 
